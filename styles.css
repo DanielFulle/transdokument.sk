@@ -1,0 +1,4 @@
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{padding:2.5rem 1rem;text-align:center}
+main{max-width:900px;margin:0 auto;padding:1rem;line-height:1.6}
+footer{border-top:1px solid #ddd;margin-top:2rem;padding:1rem;text-align:center}
