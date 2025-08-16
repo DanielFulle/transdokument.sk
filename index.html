@@ -1,19 +1,61 @@
-Transferová dokumentácia – rýchly sprievodca
-Zisti do 3 minút, či máš povinnosť viesť transferovú dokumentáciu a aký typ budeš potrebovať.
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transferová dokumentácia – rýchly sprievodca</title>
+  <meta name="description" content="Zisti rýchlo, či potrebuješ transferovú dokumentáciu a ako na ňu. Stiahni si sprievodcu zdarma.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Transferová dokumentácia – rýchly sprievodca</h1>
+      <p class="subtitle">Zisti do 3 minút, či máš povinnosť viesť transferovú dokumentáciu a aký typ budeš potrebovať.</p>
+    </div>
+  </header>
 
-Získaj prístup zdarma
-Po zadaní e-mailu ti pošlem odkaz na stiahnutie a krátky checklist. Žiadny spam, kedykoľvek sa odhlásiš.
+  <main class="container">
+    <section class="lead">
+      <div class="card">
+        <h2>Získaj prístup zdarma</h2>
+        <p>Po zadaní e-mailu ti pošlem odkaz na stiahnutie a krátky checklist. Žiadny spam, kedykoľvek sa odhlásiš.</p>
 
-Tvoj e-mail
-napr. info@transdokument.sk
- Poslať odkaz
-Kliknutím súhlasíš so spracovaním e-mailu na zaslanie sprievodcu. Zásady ochrany súkromia.
+        <!-- Formspree endpoint vložený podľa tvojho zadania -->
+        <form id="lead-form" action="https://formspree.io/f/movlbgkw" method="POST">
+          <label for="email">Tvoj e-mail</label>
+          <input id="email" name="email" type="email" placeholder="napr. info@transdokument.sk" required autocomplete="email">
+          <input type="hidden" name="_subject" value="Lead: Transferová dokumentácia – sprievodca">
+          <input type="hidden" name="source" value="transdokument.sk">
+          <button type="submit">Poslať odkaz</button>
+          <p class="help">Kliknutím súhlasíš so spracovaním e-mailu na zaslanie sprievodcu. <a href="privacy.html" target="_blank" rel="noopener">Zásady ochrany súkromia</a>.</p>
+          <div id="form-status" aria-live="polite"></div>
+          <noscript><p class="muted">Poznámka: pre okamžité potvrdenie povol JavaScript, inak uvidíš len presmerovanie po odoslaní.</p></noscript>
+        </form>
+      </div>
+    </section>
 
-Čo získaš
-✅ Rýchly prehľad povinností a typov dokumentácie
-✅ Checklist krokov a najčastejšie chyby
-✅ Bonus: vzor osnovy (stručne)
-Kto som
-Daniel – pomáham firmám s dokumentáciou a prehľadným procesom. Kontakt: info@transdokument.sk
+    <section class="benefits">
+      <h3>Čo získaš</h3>
+      <ul>
+        <li>✅ Rýchly prehľad povinností a typov dokumentácie</li>
+        <li>✅ Checklist krokov a najčastejšie chyby</li>
+        <li>✅ Bonus: vzor osnovy (stručne)</li>
+      </ul>
+    </section>
 
-© 2025-08-16 Daniel — Publikované na GitHub Pages
+    <section class="about">
+      <h3>Kto som</h3>
+      <p>Daniel – pomáham firmám s dokumentáciou a prehľadným procesom. Kontakt: <a href="mailto:info@transdokument.sk">info@transdokument.sk</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025-08-16 Daniel — Publikované na GitHub Pages</small>
+    </div>
+  </footer>
+
+  <script src="form.js" defer></script>
+</body>
+</html>
