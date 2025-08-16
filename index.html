@@ -27,6 +27,20 @@
           <input id="email" name="email" type="email" placeholder="napr. info@transdokument.sk" required autocomplete="email">
           <input type="hidden" name="_subject" value="Lead: Transferová dokumentácia – sprievodca">
           <input type="hidden" name="source" value="transdokument.sk">
+          
+            <!-- GDPR súhlas (povinný) -->
+            <label style="display:flex;gap:.5rem;align-items:flex-start;margin-top:.5rem">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span> Súhlasím so spracovaním e-mailu na zaslanie sprievodcu a následnú komunikáciu.
+            <a href="privacy.html" target="_blank" rel="noopener">Zásady ochrany súkromia</a>.
+            </span>
+            </label>
+
+            <!-- Honeypot proti botom (nechaj prázdne) -->
+            <label class="hp">Ak ste človek, toto pole nevyplňujte
+            <input type="text" name="_gotcha" autocomplete="off" tabindex="-1">
+            </label>
+
           <button type="submit">Poslať odkaz</button>
           <p class="help">Kliknutím súhlasíš so spracovaním e-mailu na zaslanie sprievodcu. <a href="privacy.html" target="_blank" rel="noopener">Zásady ochrany súkromia</a>.</p>
           <div id="form-status" aria-live="polite"></div>
