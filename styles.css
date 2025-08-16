@@ -14,3 +14,6 @@ button{display:inline-block;margin-top:.8rem;padding:.8rem 1rem;border:0;border-
 ul{padding-left:1.2rem;margin:.5rem 0 0}
 li{margin:.3rem 0}
 .site-footer{border-top:1px solid #eee;margin-top:3rem;padding:1rem 0;text-align:center;color:#666}
+
+/* Honeypot pole neviditeľné pre bežného návštevníka */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
