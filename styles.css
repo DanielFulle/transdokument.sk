@@ -24,3 +24,8 @@ button:focus-visible, input[type=email]:focus-visible, a:focus-visible{
   outline:3px solid #1d4ed8; /* výrazný obrys pri navigácii klávesnicou */
   outline-offset:2px;
 }
+
+  .faq details{border:1px solid #e5e7eb;border-radius:12px;padding:0.8rem 1rem;margin:0.6rem 0;background:#fff}
+  .faq summary{font-weight:600;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:0.6rem 0 0}
