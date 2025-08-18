@@ -17,3 +17,10 @@ li{margin:.3rem 0}
 
 /* Honeypot pole neviditeľné pre bežného návštevníka */
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Prístupnosť: väčší tap target a jasný focus */
+button{min-height:44px; min-width:44px}
+button:focus-visible, input[type=email]:focus-visible, a:focus-visible{
+  outline:3px solid #1d4ed8; /* výrazný obrys pri navigácii klávesnicou */
+  outline-offset:2px;
+}
