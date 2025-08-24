@@ -5,6 +5,10 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     status.textContent = 'Odosielam…';
+
+    // >>> PRIDAJ PRESNE TENTO RIADOK <<<
+    document.getElementById('replyto').value = form.email.value;
+
     const data = new FormData(form);
     try {
       const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
