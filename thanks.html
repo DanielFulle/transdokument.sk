@@ -53,4 +53,15 @@
  
   </main>
 </body>
+
+    <script>
+      // Plausible eventy pre CTA (funguje, lebo už máš načítané plausible.io v <head>)
+      window.addEventListener('DOMContentLoaded', function () {
+        var buy = document.getElementById('cta-buy-template');
+        var order = document.getElementById('cta-order-custom');
+        if (buy && typeof plausible === 'function')  buy.addEventListener('click',  function(){ plausible('BuyTemplateClick'); });
+        if (order && typeof plausible === 'function') order.addEventListener('click', function(){ plausible('OrderCustomClick'); });
+      });
+    </script>
+
 </html>
