@@ -10,18 +10,9 @@
 
   <link rel="canonical" href="https://www.transdokument.sk/thanks.html">
 
-  <meta property="og:title" content="Ďakujeme – odoslané">
-  <meta property="og:description" content="Tvoj e-mail sme prijali. Tu je odkaz na sprievodcu.">
   <meta property="og:url" content="https://www.transdokument.sk/thanks.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.transdokument.sk/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://www.transdokument.sk/og-image.png">
-
-  <meta name="description" content="Tvoj e-mail sme prijali. Tu si môžeš stiahnuť sprievodcu k transferovej dokumentácii a uložiť si odkaz pre neskôr.">
+  <meta name="description" content="Tvoj e-mail sme prijali. Odkaz na sprievodcu nájdeš v doručenom e-maile. Medzitým si môžeš objednať vzor alebo vypracovanie na mieru.">
+  <meta property="og:description" content="Tvoj e-mail sme prijali. Odkaz na sprievodcu príde mailom. Pozri si aj možnosti kúpy vzoru alebo vypracovania na mieru.">
   
 </head>
 <body>
@@ -51,17 +42,16 @@
       </div>
     </section>
  
-  </main>
+    </main>
+
+      <!-- (voliteľné) Plausible eventy pre CTA -->
+      <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          var buy = document.getElementById('cta-buy-template');
+          var order = document.getElementById('cta-order-custom');
+          if (buy && typeof plausible === 'function')  buy.addEventListener('click',  function(){ plausible('BuyTemplateClick'); });
+          if (order && typeof plausible === 'function') order.addEventListener('click', function(){ plausible('OrderCustomClick'); });
+        });
+      </script>
 </body>
-
-    <script>
-      // Plausible eventy pre CTA (funguje, lebo už máš načítané plausible.io v <head>)
-      window.addEventListener('DOMContentLoaded', function () {
-        var buy = document.getElementById('cta-buy-template');
-        var order = document.getElementById('cta-order-custom');
-        if (buy && typeof plausible === 'function')  buy.addEventListener('click',  function(){ plausible('BuyTemplateClick'); });
-        if (order && typeof plausible === 'function') order.addEventListener('click', function(){ plausible('OrderCustomClick'); });
-      });
-    </script>
-
 </html>
