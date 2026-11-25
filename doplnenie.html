@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doplnenie údajov do zmluvy | Transdokument</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="styles.css">
+  <script defer data-domain="transdokument.sk" src="https://plausible.io/js/script.file-downloads.js"></script>
+</head>
+<body>
+  <main class="container" style="max-width:800px">
+    <h1>Doplnenie údajov do zmluvy</h1>
+    <p id="uvod">Návrh zmluvy č. <strong id="cislo-text"></strong> máš v prílohe e-mailu. Doplň prosím údaje, ktoré v ňom chýbajú (bodky). Potom ti pošlem finálnu zmluvu na podpis.</p>
+    <p id="bez-odkazu" hidden>Tento formulár sa otvára cez odkaz z e-mailu s návrhom zmluvy. Ak ho nemáš, napíš na <a href="mailto:info@transdokument.sk">info@transdokument.sk</a>.</p>
+
+    <div class="card" id="karta">
+      <form id="doplnenie-form" class="td-form" data-typ="doplnenie" data-next="/doplnenie-dakujeme.html" action="https://td-prenos-test.fulledaniel1.workers.dev/formular" method="POST">
+        <input type="hidden" name="zmluva" id="zmluva">
+        <input type="hidden" name="kod" id="kod">
+
+        <fieldset>
+          <legend>Bankové spojenie</legend>
+          <label for="iban">IBAN</label>
+          <input id="iban" name="iban" type="text" required maxlength="42" autocomplete="off" placeholder="napr. SK00 0000 0000 0000 0000 0000"
+                 pattern="[A-Za-z]{2}[0-9]{2}[A-Za-z0-9 ]{10,38}" title="IBAN začína kódom krajiny, napr. SK…">
+
+          <label for="banka">Banka</label>
+          <input id="banka" name="banka" type="text" required maxlength="60" placeholder="napr. Tatra banka">
+
+          <label for="cislo_uctu">Číslo účtu <span class="help-text">(nepovinné, starý formát, napr. 1234567890/1100)</span></label>
+          <input id="cislo_uctu" name="cislo_uctu" type="text" maxlength="40" autocomplete="off">
+        </fieldset>
+
+        <fieldset>
+          <legend>Kontakt</legend>
+          <label for="telefon">Telefón</label>
+          <input id="telefon" name="telefon" type="tel" maxlength="40" autocomplete="tel" placeholder="napr. +421 900 000 000">
+
+          <label for="email">E-mail pre komunikáciu k zmluve</label>
+          <input id="email" name="email" type="email" required maxlength="100" autocomplete="email">
+
+          <label for="osoba_kontakt">Kontaktná osoba</label>
+          <input id="osoba_kontakt" name="osoba_kontakt" type="text" maxlength="100" autocomplete="name">
+
+          <label for="osoba_prevzatie">Kto za firmu preberie hotové dielo <span class="help-text">(meno a priezvisko)</span></label>
+          <input id="osoba_prevzatie" name="osoba_prevzatie" type="text" maxlength="100">
+        </fieldset>
+
+        <fieldset>
+          <legend>Kontrola údajov z registrov <span class="help-text">(vyplň len, ak je v návrhu niečo zle)</span></legend>
+          <label for="dic">DIČ</label>
+          <input id="dic" name="dic" type="text" inputmode="numeric" maxlength="15" autocomplete="off">
+
+          <label for="ic_dph">IČ DPH <span class="help-text">(alebo napíš „nie som platiteľ“)</span></label>
+          <input id="ic_dph" name="ic_dph" type="text" maxlength="30" autocomplete="off">
+
+          <label for="poznamka">Iné opravy alebo poznámka <span class="help-text">(napr. sídlo, konatelia, kto podpisuje)</span></label>
+          <textarea id="poznamka" name="poznamka" rows="3" maxlength="1000"></textarea>
+        </fieldset>
+
+        <input type="hidden" name="zdroj" value="transdokument.sk">
+
+        <label style="display:flex;gap:.5rem;align-items:flex-start;margin-top:.8rem;font-weight:400">
+          <input type="checkbox" name="suhlas" value="ano" required>
+          <span>Súhlasím so spracovaním údajov na prípravu zmluvy.
+          <a href="privacy.html" target="_blank" rel="noopener">Zásady ochrany súkromia</a>.</span>
+        </label>
+
+        <label class="hp" aria-hidden="true">
+          <input type="text" name="_gotcha" autocomplete="off" tabindex="-1">
+        </label>
+
+        <button type="submit">Odoslať údaje</button>
+        <p class="help-text">Údaje sa zašifrujú priamo v tvojom prehliadači.</p>
+        <div class="form-status" aria-live="polite"></div>
+        <noscript><p>Formulár potrebuje zapnutý JavaScript. Prípadne napíš na info@transdokument.sk.</p></noscript>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      // odkaz z e-mailu: doplnenie.html?z=<číslo zmluvy>&k=<kód>
+      var p = new URLSearchParams(location.search);
+      var z = (p.get('z') || '').replace(/\D/g, '').slice(0, 12);
+      var k = (p.get('k') || '').replace(/[^A-Za-z0-9-]/g, '').slice(0, 40);
+      if (!z || !k) {
+        document.getElementById('uvod').hidden = true;
+        document.getElementById('karta').hidden = true;
+        document.getElementById('bez-odkazu').hidden = false;
+        return;
+      }
+      document.getElementById('zmluva').value = z;
+      document.getElementById('kod').value = k;
+      document.getElementById('cislo-text').textContent = z;
+    })();
+  </script>
+  <script src="form.js" defer></script>
+</body>
+</html>
