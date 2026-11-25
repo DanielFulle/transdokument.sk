@@ -19,7 +19,7 @@
         <input type="hidden" name="zmluva" id="zmluva">
         <input type="hidden" name="kod" id="kod">
 
-        <fieldset>
+        <fieldset class="blok">
           <legend>Bankové spojenie</legend>
           <label for="iban">IBAN</label>
           <input id="iban" name="iban" type="text" required maxlength="42" autocomplete="off" placeholder="napr. SK00 0000 0000 0000 0000 0000"
@@ -32,7 +32,7 @@
           <input id="cislo_uctu" name="cislo_uctu" type="text" maxlength="40" autocomplete="off">
         </fieldset>
 
-        <fieldset>
+        <fieldset class="blok">
           <legend>Kontakt</legend>
           <label for="telefon">Telefón</label>
           <input id="telefon" name="telefon" type="tel" maxlength="40" autocomplete="tel" placeholder="napr. +421 900 000 000">
@@ -47,7 +47,7 @@
           <input id="osoba_prevzatie" name="osoba_prevzatie" type="text" maxlength="100">
         </fieldset>
 
-        <fieldset>
+        <fieldset class="blok">
           <legend>Kontrola údajov z registrov <span class="help-text">(vyplň len, ak je v návrhu niečo zle)</span></legend>
           <label for="dic">DIČ</label>
           <input id="dic" name="dic" type="text" inputmode="numeric" maxlength="15" autocomplete="off">
