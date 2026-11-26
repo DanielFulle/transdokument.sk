@@ -3,74 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Objednať vypracovanie transferovej dokumentácie | Transdokument</title>
-  <meta name="description" content="Objednaj vypracovanie transferovej dokumentácie na mieru. Vyplň IČO, rok a kontakt, ozvem sa s návrhom zmluvy.">
-  <meta name="robots" content="noindex">
+  <title>Objednávka – pripravujeme | Transdokument</title>
+  <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="styles.css">
-  <link rel="canonical" href="https://www.transdokument.sk/objednavka.html">
-  <script defer data-domain="transdokument.sk" src="https://plausible.io/js/script.file-downloads.js"></script>
 </head>
 <body>
   <main class="container" style="max-width:800px">
-    <h1>Objednať vypracovanie</h1>
-    <p>Vyplň pár údajov o firme. Ozvem sa ti s návrhom zmluvy a postupom, ako bezpečne poslať podklady.</p>
-
-    <div class="card">
-      <form id="order-form" class="td-form" data-typ="objednavka" data-next="/objednavka-dakujeme.html" action="https://td-prenos-test.fulledaniel1.workers.dev/formular" method="POST">
-        <label for="ico">IČO firmy</label>
-        <input id="ico" name="ico" type="text" inputmode="numeric" pattern="[0-9 ]{6,10}" title="IČO má 8 číslic" placeholder="napr. 12345678" required maxlength="10" autocomplete="off">
-
-        <label for="firma">Názov firmy</label>
-        <input id="firma" name="firma" type="text" required maxlength="200" autocomplete="organization">
-
-        <fieldset class="roky" id="roky" data-aspon-jeden="Vyber aspoň jeden rok.">
-          <legend>Za ktoré roky? <span class="help-text">(môžeš vybrať viac)</span></legend>
-          <!-- roky doplní skript nižšie (aktuálny rok a 4 predchádzajúce) -->
-        </fieldset>
-
-        <label for="meno">Tvoje meno a priezvisko</label>
-        <input id="meno" name="meno" type="text" required maxlength="200" autocomplete="name">
-
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" required maxlength="200" autocomplete="email">
-
-        <label for="telefon">Telefón <span class="help-text">(nepovinné)</span></label>
-        <input id="telefon" name="telefon" type="tel" maxlength="30" autocomplete="tel" placeholder="napr. +421 900 000 000">
-
-        <label for="poznamka">Poznámka <span class="help-text">(nepovinné)</span></label>
-        <textarea id="poznamka" name="poznamka" rows="3" maxlength="1000"></textarea>
-
-        <input type="hidden" name="zdroj" value="transdokument.sk">
-
-        <label style="display:flex;gap:.5rem;align-items:flex-start;margin-top:.8rem;font-weight:400">
-          <input type="checkbox" name="suhlas" value="ano" required>
-          <span>Súhlasím so spracovaním údajov na prípravu ponuky a zmluvy.
-          <a href="privacy.html" target="_blank" rel="noopener">Zásady ochrany súkromia</a>.</span>
-        </label>
-
-        <label class="hp" aria-hidden="true">
-          <input type="text" name="_gotcha" autocomplete="off" tabindex="-1">
-        </label>
-
-        <button type="submit">Odoslať objednávku</button>
-        <p class="help-text">Údaje sa zašifrujú priamo v tvojom prehliadači. Objednávka je nezáväzná, záväzná je až podpísaná zmluva.</p>
-        <div class="form-status" aria-live="polite"></div>
-        <noscript><p>Formulár potrebuje zapnutý JavaScript. Prípadne napíš na info@transdokument.sk.</p></noscript>
-      </form>
-    </div>
+    <h1>Pripravujeme</h1>
+    <p>Táto časť webu sa ešte pripravuje.</p>
+    <p>Ak máš záujem o vypracovanie transferovej dokumentácie, napíš na <a href="mailto:info@transdokument.sk">info@transdokument.sk</a>.</p>
+    <p><a href="/">← späť na hlavnú stránku</a></p>
   </main>
-
-  <script>
-    (function () {
-      var fs = document.getElementById('roky');
-      var y = new Date().getFullYear();
-      for (var r = y; r >= y - 4; r--) {
-        var l = document.createElement('label');
-        l.innerHTML = '<input type="checkbox" name="roky" value="' + r + '"> ' + r;
-        fs.appendChild(l);
-      }
-    })();
-  </script>
-  <script src="form.js" defer></script>
 </body>
 </html>
